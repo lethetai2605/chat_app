@@ -1,0 +1,18 @@
+<div>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <%= link_to "CHAT APP", root_path, class: "nav-link navbar-inverse" %>
+    </li>
+    <% if current_user %>
+      <li class="nav-item">
+        <a class="nav-link">
+          <img class="avatar" src="<%= current_user.gravatar_url %>">
+          <%= current_user.username %>
+        </a>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+      </li>
+    <% end %>
+  </ul>
+</div>
